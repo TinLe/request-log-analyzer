@@ -2,6 +2,7 @@ module RequestLogAnalyzer::FileFormat
 
   autoload :Rails,            'request_log_analyzer/file_format/rails'
   autoload :Rails3,           'request_log_analyzer/file_format/rails3'
+  autoload :Heroku,           'request_log_analyzer/file_format/heroku'
   autoload :RailsDevelopment, 'request_log_analyzer/file_format/rails_development'
   autoload :Oink,             'request_log_analyzer/file_format/oink'
   autoload :Rack,             'request_log_analyzer/file_format/rack'
@@ -67,7 +68,7 @@ module RequestLogAnalyzer::FileFormat
   # Autodetects the filetype of a given file.
   #
   # Returns a FileFormat instance, by parsing the first couple of lines of the provided file
-  # with avery known file format and return the most promosing file format based on the parser
+  # with every known file format and return the most promising file format based on the parser
   # statistics. The <tt>autodetect_score</tt> method is used to score the fitness of a format.
   #
   # <tt>file</tt>:: The file to detect the file format for.
